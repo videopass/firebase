@@ -1,0 +1,47 @@
+{
+	"name": "@videopass/firebase",
+	"version": "0.0.12",
+	"description": "videopass firebase",
+	"main": "lib/index.js",
+	"types": "lib/index.d.ts",
+	"scripts": {
+		"build": "tsc",
+		"dev": "NODE_ENV=development env-cmd nodemon",
+		"test": "env-cmd jest --watch",
+		"start": "concurrently  'npm run dev' 'npm run firestore' 'npm run seed'",
+		"kill-emulator": "kill-port 4000 && kill-port 5001  && kill-port 5000",
+		"seed": "ttab tsx watch ./dbseed.ts",
+		"firestore": "ttab npm run kill-emulator && firebase emulators:start --inspect-functions --only firestore",
+		"update": "ncu -u @videopass*/* && npm install",
+		"deploy": "rm -r ./lib && tsc && bump && npm publish --access public"
+	},
+	"author": "videopass",
+	"license": "ISC",
+	"dependencies": {
+		"@videopass/model": "^0.0.8",
+		"@videopass/services": "^0.0.17",
+		"delay": "^5.0.0",
+		"firebase": "^9.19.1"
+	},
+	"devDependencies": {
+		"@types/jest": "^27.0.1",
+		"@types/node": "^18.15.11",
+		"@types/node-fetch": "^2.5.10",
+		"env-cmd": "^10.1.0",
+		"firebase-admin": "^11.6.0",
+		"jest": "^27.1.0",
+		"kill-port": "^2.0.1",
+		"nock": "^13.0.11",
+		"nodemon": "^2.0.12",
+		"npm": "^8.1.0",
+		"npm-check-updates": "^11.5.11",
+		"strong-mock": "^7.0.0",
+		"ts-jest": "^27.0.5",
+		"ts-node": "^10.2.1",
+		"tslint": "^6.1.2",
+		"tsx": "^3.12.6",
+		"ttab": "^0.8.0",
+		"typescript": "^4.4.2",
+		"version-bump-prompt": "^6.1.0"
+	}
+}

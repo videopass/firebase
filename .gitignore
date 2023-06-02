@@ -1,0 +1,24 @@
+## Compiled JavaScript files
+*/**/*.js
+**/*.js.map
+
+# Typescript v1 declaration files
+typings/
+
+node_modules/
+
+lib/**
+**/lib/**
+localStorage
+# .env
+# .env.*
+yarn.lock
+
+env
+*audit.json
+*.log
+.*-audit.json
+*.tgz
+wallaby.js
+serviceAccountKey.json
+__impl__/test.mp4

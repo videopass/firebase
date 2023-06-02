@@ -1,0 +1,14 @@
+**/__tests__/**
+**/src/**
+*.json
+*.md
+wallaby.js
+*.env
+tsconfig.*
+*.log
+jest.*
+.firebaserc
+firestore.rules
+dbseed.ts
+**/__impl__/**
+**/files/**
